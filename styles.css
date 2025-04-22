@@ -1,0 +1,399 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #4A4A4A;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para la imagen de portada */
+.cover-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    image-rendering: pixelated;
+}
+
+/* Opcional: Espacio debajo del header */
+header h1 {
+    margin-top: 20px;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+nav ul li .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    display: block;
+    color: #000;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f2f2f2;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+    display: block;
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+}
+
+/* Aplicar la fuente de pixel art solo a los títulos */
+h1,
+h2 {
+    font-family: 'Press Start 2P', cursive;
+    /* Cambia esto por la fuente que elijas */
+    text-align: center;
+    /* Centrar el texto si lo deseas */
+}
+
+/* Mantener la fuente normal para el contenido */
+.about-me,
+.contact-modal {
+    font-family: 'Arial', sans-serif;
+    /* Cambia 'Arial' por la fuente que prefieras para el contenido */
+    text-align: justify;
+    /* Asegúrate de que el contenido esté justificado */
+}
+
+/* Estilo base para inputs y textarea */
+.contact-modal-content input,
+.contact-modal-content textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    /* Tamaño de fuente */
+    font-family: Arial, sans-serif;
+    /* Fuente común para ambos elementos */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-modal-content input:focus,
+.contact-modal-content textarea:focus {
+    outline: none;
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+}
+
+button {
+    background-color: #4A4A4A;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+figure {
+    margin: 15px;
+    border: 2px solid #444;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+figure img {
+    width: 135px;
+    height: 135px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+figure img:hover {
+    transform: scale(1.1);
+}
+
+img {
+    margin: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 135px;
+    height: auto;
+    cursor: pointer;
+}
+
+.modal-content img {
+    cursor: default;
+}
+
+/* Modal de "Sobre mí" */
+.about-me-modal-content {
+    text-align: justify;
+    padding: 15px;
+}
+
+.about-me-image {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    image-rendering: pixelated;
+    display: block;
+    margin: 0 auto;
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #4A4A4A;
+    color: white;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+figcaption {
+    text-align: center;
+    padding: 10px;
+}
+
+#caption {
+    text-align: center;
+    color: white;
+    margin: 15px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #ddd;
+}
+
+/* Estilos de la galería */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery img {
+    width: 135px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Las flechas de navegación (anterior/siguiente) */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.3s;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Posiciona la flecha a la izquierda */
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+/* Posiciona la flecha a la derecha */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Efecto hover en las flechas */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Imagen que se expande al hacer clic */
+.modal-content {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    transition: transform 0.3s ease;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+/* Modal de contacto */
+.contact-modal-content {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: auto;
+    animation: fadeIn 0.5s;
+}
+
+.contact-modal-content h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contact-modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-modal-content label {
+    margin: 10px 0 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+.contact-submit-btn {
+    background-color: #6c63ff;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.contact-submit-btn:hover {
+    background-color: #575757;
+}
+
+/* Estilo para el footer */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #333;
+    color: white;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
